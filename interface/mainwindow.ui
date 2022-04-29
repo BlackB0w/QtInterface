@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>441</width>
-    <height>364</height>
+    <width>470</width>
+    <height>362</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>470</width>
+    <height>362</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>470</width>
+    <height>362</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -21,40 +33,54 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>20</y>
-      <width>244</width>
+      <x>20</x>
+      <y>0</y>
+      <width>431</width>
       <height>108</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="1">
-      <widget class="QDial" name="volumeDial">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMinimumSize</enum>
+     </property>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(61, 106, 255)</string>
+        <string notr="true">font: 12pt &quot;Fixedsys&quot;;</string>
        </property>
-       <property name="maximum">
-        <number>100</number>
+       <property name="text">
+        <string>Усиление</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Fixedsys&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Громкость</string>
        </property>
       </widget>
      </item>
      <item row="0" column="2">
       <widget class="QProgressBar" name="volume">
+       <property name="styleSheet">
+        <string notr="true">QProgressBar {
+    border: 2px solid;
+	border-color: rgb(0, 25, 255);
+    border-radius: 5px;
+	text-align: center;
+	font: 8pt &quot;Fixedsys&quot;;
+}
+
+QProgressBar::chunk {
+    background-color:rgb(108, 138, 239);
+    width: 20px;
+}</string>
+       </property>
        <property name="value">
         <number>0</number>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QProgressBar" name="amplifier">
-       <property name="maximum">
-        <number>30</number>
-       </property>
-       <property name="value">
-        <number>0</number>
-       </property>
-       <property name="format">
-        <string>%vdB</string>
        </property>
       </widget>
      </item>
@@ -71,23 +97,40 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
+     <item row="1" column="2">
+      <widget class="QProgressBar" name="amplifier">
        <property name="styleSheet">
-        <string notr="true">font: 12pt &quot;Fixedsys&quot;;</string>
+        <string notr="true">QProgressBar {
+    border: 2px solid;
+	border-color: rgb(0, 25, 255);
+    border-radius: 5px;
+	text-align: center;
+	font: 8pt &quot;Fixedsys&quot;;
+}
+
+QProgressBar::chunk {
+    background-color:rgb(160, 106, 235);
+    width: 20px;
+}</string>
        </property>
-       <property name="text">
-        <string>Громкость</string>
+       <property name="maximum">
+        <number>30</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="format">
+        <string>%vdB</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
+     <item row="0" column="1">
+      <widget class="QDial" name="volumeDial">
        <property name="styleSheet">
-        <string notr="true">font: 12pt &quot;Fixedsys&quot;;</string>
+        <string notr="true">background-color: rgb(61, 106, 255)</string>
        </property>
-       <property name="text">
-        <string>Усиление</string>
+       <property name="maximum">
+        <number>100</number>
        </property>
       </widget>
      </item>
@@ -96,10 +139,10 @@
    <widget class="DrawSpace" name="draw" native="true">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>130</y>
-      <width>361</width>
-      <height>161</height>
+      <x>20</x>
+      <y>110</y>
+      <width>431</width>
+      <height>181</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -115,15 +158,26 @@
       <x>180</x>
       <y>300</y>
       <width>75</width>
-      <height>23</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(163, 108, 240);
+     <string notr="true">QPushButton{
+background-color: rgb(163, 108, 240);
 border-style: solid;
 border-radius: 6px;
 border-width:1px;
-border-color: rgb(0, 0, 255);</string>
+border-color: rgb(0, 0, 255);
+font: 8pt &quot;Fixedsys&quot;;
+}
+QPushButton:pressed{
+background-color: rgb(103, 68, 200);
+border-style: solid;
+border-radius: 6px;
+border-width:1px;
+border-color: rgb(0, 0, 255);
+font: 8pt &quot;Fixedsys&quot;;
+}</string>
     </property>
     <property name="text">
      <string>Начать</string>
@@ -135,7 +189,7 @@ border-color: rgb(0, 0, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>441</width>
+     <width>470</width>
      <height>21</height>
     </rect>
    </property>

@@ -15,6 +15,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::resizeEvent(QResizeEvent *e)
+{
+
+}
 
 
 void MainWindow::on_amplifierDial_valueChanged(int value)
@@ -32,7 +36,7 @@ void MainWindow::on_volumeDial_valueChanged(int value)
 void MainWindow::on_pushButton_clicked()
 {
     QVector<QVector<int>>pic;
-    for(int i = 0;i<1000;i++){
+    for(int i = 0;i<this->size().width();i++){
         pic.push_back(QVector<int>({i,getSignal()}));
         ui->draw->setPic(pic);
     }
