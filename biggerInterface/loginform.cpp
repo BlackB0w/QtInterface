@@ -25,7 +25,7 @@ void LoginForm::on_pushButton_clicked()
             break;
         }
     if(isInList){
-        MainWindow * mw= new MainWindow(usrs[i]);
+        MainWindow * mw= new MainWindow(usrs,usrs[i]);
         mw->show();
         this->close();
     } else{
